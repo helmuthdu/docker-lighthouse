@@ -1,0 +1,14 @@
+{
+  "name": "docker-lighthouse",
+  "version": "1.0.0",
+  "description": "**Run Google's Lighthouse headless in the background**",
+  "scripts": {
+    "lighthouse": "./entrypoint.sh \"https://www.amazon.com\"",
+    "lighthouse:desktop": "./entrypoint.sh -d \"https://www.amazon.com\"",
+    "docker:build": "docker build --pull --rm -t lighthouse:latest \".\"",
+    "docker:lighthouse": "docker run -ti --rm -v $(pwd):/lighthouse lighthouse \"https://www.amazon.com\"",
+    "docker:lighthouse:desktop": "docker run -ti --rm -v $(pwd):/lighthouse lighthouse -d \"https://www.amazon.com\""
+  },
+  "author": "",
+  "license": "ISC"
+}
